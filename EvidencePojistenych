@@ -1,0 +1,88 @@
+Console.WriteLine("Evidence pojištěných");
+SpravaPojistenych spravaPojistenych = new SpravaPojistenych();
+
+char volba = '0';
+while(volba != '4')
+{
+    Console.WriteLine("Vyberte si akci: ");
+    Console.WriteLine("1 - Přidat nového pojištěného");
+    Console.WriteLine("2 - Vypsat všechny pojištěné");
+    Console.WriteLine("3 - Vyhledat pojištěného");
+    Console.WriteLine("4 - Konec");
+    volba = Console.ReadKey().KeyChar;
+    Console.WriteLine();
+    switch (volba)
+    {
+        case '1':
+            Console.WriteLine("Zadejte jméno pojištěného: ");
+            Console.ReadLine();
+            Console.WriteLine("Zadejte příjmení: ");
+            Console.ReadLine();
+            Console.WriteLine("Zadejte věk: ");
+            Console.ReadLine();
+            Console.WriteLine("Zadejte telefonní číslo: ");
+            Console.ReadLine();
+            break;
+        case '2':
+            spravaPojistenych.VypisPojistene();
+            break;
+        case '3':
+            Console.WriteLine("Zadejte jméno pojištěného: ");
+            Console.ReadLine();
+            Console.WriteLine("Zadejte příjmení: ");
+            break;
+        case '4':
+            break;
+        default:
+            Console.WriteLine("Neplatná volba");
+            break;
+    }
+
+}
+Console.ReadKey();
+
+namespace Pojisteni
+{
+    internal class SpravaPojistenych
+    {
+        public List<Pojistenec> pojisteniLide;
+
+        public SpravaPojistenych()
+        {
+            pojisteniLide = new List<Pojistenec>();
+        }
+        /*pojisteniLide.Add(new SpravaPojistenych("Karel", "Novák", 33, 734536958));
+        pojisteniLide.Add(new SpravaPojistenych("Josef", "Novák", 43, 755688993));
+        pojisteniLide.Add(new SpravaPojistenych("Karolína", "Slováková", 31, 775343791));*/
+
+        public void VypisPojistene()
+        {
+            
+            foreach (Pojistenec pojistenec in pojisteniLide)
+                Console.WriteLine(pojistenec);
+        }
+    }
+}
+
+namespace Pojisteni
+{
+    internal class SpravaPojistenych
+    {
+        public List<Pojistenec> pojisteniLide;
+
+        public SpravaPojistenych()
+        {
+            pojisteniLide = new List<Pojistenec>();
+        }
+        /*pojisteniLide.Add(new SpravaPojistenych("Karel", "Novák", 33, 734536958));
+        pojisteniLide.Add(new SpravaPojistenych("Josef", "Novák", 43, 755688993));
+        pojisteniLide.Add(new SpravaPojistenych("Karolína", "Slováková", 31, 775343791));*/
+
+        public void VypisPojistene()
+        {
+            
+            foreach (Pojistenec pojistenec in pojisteniLide)
+                Console.WriteLine(pojistenec);
+        }
+    }
+}
