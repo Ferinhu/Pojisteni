@@ -66,23 +66,27 @@ namespace Pojisteni
 
 namespace Pojisteni
 {
-    internal class SpravaPojistenych
+    internal class Pojistenec : SpravaPojistenych
     {
-        public List<Pojistenec> pojisteniLide;
+        public string Jmeno { get; private set; }
 
-        public SpravaPojistenych()
+        public string Prijmeni { get; private set; }
+
+        public int Vek { get; private set; }
+
+        public string TelefonniCislo { get; private set; }
+
+        public Pojistenec(string jmeno, string prijmeni, int vek, string telefonniCislo)
         {
-            pojisteniLide = new List<Pojistenec>();
+            Jmeno = jmeno;
+            Prijmeni = prijmeni;
+            Vek = vek;
+            TelefonniCislo = telefonniCislo;
         }
-        /*pojisteniLide.Add(new SpravaPojistenych("Karel", "Novák", 33, 734536958));
-        pojisteniLide.Add(new SpravaPojistenych("Josef", "Novák", 43, 755688993));
-        pojisteniLide.Add(new SpravaPojistenych("Karolína", "Slováková", 31, 775343791));*/
 
-        public void VypisPojistene()
+        public override string ToString()
         {
-            
-            foreach (Pojistenec pojistenec in pojisteniLide)
-                Console.WriteLine(pojistenec);
+            return Jmeno + Prijmeni + Vek + TelefonniCislo;
         }
     }
 }
